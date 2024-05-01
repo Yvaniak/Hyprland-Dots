@@ -5,6 +5,10 @@
 iDIR="$HOME/.config/swaync/icons"
 notification_timeout=1000
 
+limit=20
+above="10%"
+under="2%"
+
 # Get brightness
 get_backlight() {
 	echo $(brightnessctl -m | cut -d, -f4)
@@ -38,16 +42,31 @@ change_backlight() {
 
 # Execute accordingly
 case "$1" in
-	"--get")
-		get_backlight
-		;;
-	"--inc")
-		change_backlight "+10%"
-		;;
-	"--dec")
-		change_backlight "10%-"
-		;;
-	*)
-		get_backlight
-		;;
+    "--get") 
+            get_backlight 
+            ;; 
+    "--inc")
+            if [[ $($HOME/.config/hypr/scripts/Brightness.sh --get | cut -d% -f1) -lt $limit ]] 
+            then  
+                    perc=$under
+            else
+                    perc=$above
+            fi
+            echo $perc
+            change_backlight "+"$perc
+
+            ;;
+    "--dec")
+            if [[ $($HOME/.config/hypr/scripts/Brightness.sh --get | cut -d% -f1) -le $limit ]]
+            then
+                    perc=$under
+            else
+                    perc=$above
+            fi
+            echo $perc
+            change_backlight $perc"-"
+            ;;
+    *)
+            get_backlight
+            ;;
 esac
