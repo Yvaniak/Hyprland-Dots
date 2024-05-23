@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 if [[ -e ~/scripts/state ]]; then
 	light=$(cat ~/scripts/state)
