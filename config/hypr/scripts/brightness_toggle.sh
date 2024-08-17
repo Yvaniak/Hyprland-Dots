@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
-
-if [[ -e ~/scripts/state ]]; then
-	light=$(cat ~/scripts/state)
+export STATE_FILE=~/.config/hypr/scripts/state
+if [[ -e $STATE_FILE ]]; then
+	light=$(cat $STATE_FILE)
 	$(brightnessctl s $light)
-	rm ~/scripts/state
+	rm $STATE_FILE
 	echo "tata"
 else
-	$(brightnessctl g > ~/scripts/state)
-	$(brightnessctl s 0%)
+	brightnessctl g > $STATE_FILE
+	brightnessctl s 0%
 	echo "test"
 fi
