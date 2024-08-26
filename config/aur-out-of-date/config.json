@@ -1,0 +1,8 @@
+{
+  "ignore": {
+    },
+  "scripts": {
+    "nemo-qml-plugin-dbus": "gh api /repos/sailfishos/nemo-qml-plugin-dbus/git/matching-refs/tags | jq '.[-1].ref' | awk -F'/' '{print $3}' | sed 's/.$//'",
+    "moneydance": "curl -s https://infinitekind.com/stabledl/current/version.txt | sed 's/ (/./' | sed 's/)//'"
+  }
+}
