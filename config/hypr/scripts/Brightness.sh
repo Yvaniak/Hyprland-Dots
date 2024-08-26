@@ -6,6 +6,10 @@ iDIR="$HOME/.config/swaync/icons"
 notification_timeout=1000
 step=10  # INCREASE/DECREASE BY THIS VALUE
 
+limit=20
+above="10%"
+under="2%"
+
 # Get brightness
 get_backlight() {
 	brightnessctl -m | cut -d, -f4 | sed 's/%//'
