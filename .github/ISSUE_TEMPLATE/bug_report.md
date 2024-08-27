@@ -33,13 +33,14 @@ labels: "Something isn't working"
 
 [Please add any other relevant information about the bug and remove the unnecessary lines.]
 
-e.g.,
+### show output of `inxi -CGIsSMnr` install package `inxi` if not exist
+show output here
+```
 
-- Linux Distro: [e.g., ArchLinux, Debian, Fedora 39, OpenSuse]
-- Linux Version, output of `uname -a`:
-- Hyprland Version, output of `hyprctl version`:
-- Installation Environment: [e.g., On The Main Hardware, On A Virtual Machine]
-- Other info: [e.g., Display Resolution, Resolution, etc]
+
+```
+
+or you can also run `inxi -CGIsSMnr >diag.txt` and attach diag.txt
 
 ### Additional Information
 

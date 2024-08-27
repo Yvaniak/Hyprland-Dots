@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 ### https://github.com/JaKooLit/JaKooLit
 
 # Set some colors for output messages
@@ -28,11 +28,17 @@ declare -A directories=(
     ["config/hypr/"]="$HOME/.config/hypr/"
     ["config/kitty/"]="$HOME/.config/kitty/"
     ["config/Kvantum/"]="$HOME/.config/Kvantum/"
+    ["config/nvim/"]="$HOME/.config/nvim/"
     ["config/qt5ct/"]="$HOME/.config/qt5ct"
     ["config/qt6ct/"]="$HOME/.config/qt6ct/"
     ["config/rofi/"]="$HOME/.config/rofi/"
     ["config/swaync/"]="$HOME/.config/swaync/"
     ["config/waybar/"]="$HOME/.config/waybar/"
+    ["config/cava/"]="$HOME/.config/cava/"
+    ["config/ags/"]="$HOME/.config/ags/"
+    ["config/fastfetch/"]="$HOME/.config/fastfetch/"
+    ["config/wallust/"]="$HOME/.config/wallust/"
+    ["config/wlogout/"]="$HOME/.config/wlogout/"
     # Add more directories to compare as needed
 )
 
@@ -40,8 +46,7 @@ declare -A directories=(
 declare -A exclusions=(
     ["config/hypr/"]="--exclude=UserConfigs/ --exclude=UserScripts/"
     ["config/waybar/"]="--exclude=config --exclude=style.css"
-    ["config/rofi/"]="--exclude=pywal-color/ --exclude=.current_wallpaper"
-    ["config/waybar/"]="--exclude=config --exclude=style.css --exclude=modules"
+    ["config/rofi/"]="--exclude=.current_wallpaper"
     # Add more exclusions as needed
 )
 

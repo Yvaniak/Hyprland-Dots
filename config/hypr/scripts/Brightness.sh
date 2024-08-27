@@ -4,6 +4,7 @@
 
 iDIR="$HOME/.config/swaync/icons"
 notification_timeout=1000
+step=10  # INCREASE/DECREASE BY THIS VALUE
 
 limit=20
 above="10%"
@@ -11,12 +12,12 @@ under="2%"
 
 # Get brightness
 get_backlight() {
-	echo $(brightnessctl -m | cut -d, -f4)
+	brightnessctl -m | cut -d, -f4 | sed 's/%//'
 }
 
 # Get icons
 get_icon() {
-	current=$(get_backlight | sed 's/%//')
+	current=$(get_backlight)
 	if   [ "$current" -le "20" ]; then
 		icon="$iDIR/brightness-20.png"
 	elif [ "$current" -le "40" ]; then
@@ -37,36 +38,41 @@ notify_user() {
 
 # Change brightness
 change_backlight() {
-	brightnessctl set "$1" && get_icon && notify_user
+	local current_brightness
+	current_brightness=$(get_backlight)
+
+	# Calculate new brightness
+	if [[ "$1" == "+${step}%" ]]; then
+		new_brightness=$((current_brightness + step))
+	elif [[ "$1" == "${step}%-" ]]; then
+		new_brightness=$((current_brightness - step))
+	fi
+
+	# Ensure new brightness is within valid range
+	if (( new_brightness < 5 )); then
+		new_brightness=5
+	elif (( new_brightness > 100 )); then
+		new_brightness=100
+	fi
+
+	brightnessctl set "${new_brightness}%"
+	get_icon
+	current=$new_brightness
+	notify_user
 }
 
 # Execute accordingly
 case "$1" in
-    "--get") 
-            get_backlight 
-            ;; 
-    "--inc")
-            if [[ $($HOME/.config/hypr/scripts/Brightness.sh --get | cut -d% -f1) -lt $limit ]] 
-            then  
-                    perc=$under
-            else
-                    perc=$above
-            fi
-            echo $perc
-            change_backlight "+"$perc
-
-            ;;
-    "--dec")
-            if [[ $($HOME/.config/hypr/scripts/Brightness.sh --get | cut -d% -f1) -le $limit ]]
-            then
-                    perc=$under
-            else
-                    perc=$above
-            fi
-            echo $perc
-            change_backlight $perc"-"
-            ;;
-    *)
-            get_backlight
-            ;;
+	"--get")
+		get_backlight
+		;;
+	"--inc")
+		change_backlight "+${step}%"
+		;;
+	"--dec")
+		change_backlight "${step}%-"
+		;;
+	*)
+		get_backlight
+		;;
 esac

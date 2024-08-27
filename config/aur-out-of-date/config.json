@@ -6,4 +6,3 @@
     "moneydance": "curl -s https://infinitekind.com/stabledl/current/version.txt | sed 's/ (/./' | sed 's/)//'"
   }
 }
-
