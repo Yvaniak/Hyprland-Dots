@@ -1,3 +1,7 @@
+<h3 align="center">
+<img align="center" width="80%" src=https://github.com/user-attachments/assets/bc18bd4d-944b-4d5f-a119-7578fa38f9b4 />
+</h3>
+
 <div align="center">
 <br>
   <a href="#installation"><kbd> <br> Installation <br> </kbd></a>&ensp;&ensp;
@@ -11,9 +15,6 @@
 
 <div align="center">
 
-## 💌 ** KooL-Dotfiles ** 💌
-#### Hyprland Configurations / Dotfiles
-
 ![GitHub Repo stars](https://img.shields.io/github/stars/JaKooLit/Hyprland-Dots?style=for-the-badge&color=cba6f7) ![GitHub last commit](https://img.shields.io/github/last-commit/JaKooLit/Hyprland-Dots?style=for-the-badge&color=b4befe) ![GitHub repo size](https://img.shields.io/github/repo-size/JaKooLit/Hyprland-Dots?style=for-the-badge&color=cba6f7) <a href="https://discord.gg/9JEgZsfhex"> <img src="https://img.shields.io/discord/1151869464405606400?style=for-the-badge&logo=discord&color=cba6f7&link=https%3A%2F%2Fdiscord.gg%9JEgZsfhex"> </a>
 
 <br/>
@@ -21,7 +22,7 @@
 
 <h3 align="center">
 	<img src="https://github.com/JaKooLit/Telegram-Animated-Emojis/blob/main/Activity/Sparkles.webp" alt="Sparkles" width="38" height="38" />
-	KooL Hyprland-Dotfiles Showcase 
+	KooL's Hyprland Dotfiles Showcase 
 	<img src="https://github.com/JaKooLit/Telegram-Animated-Emojis/blob/main/Activity/Sparkles.webp" alt="Sparkles" width="38" height="38" />
 </h3>
 
@@ -58,10 +59,16 @@ https://github.com/JaKooLit/Hyprland-Dots/assets/85185940/50d53755-0f11-45d6-991
 
 - [Debian Trixie / SiD](https://github.com/JaKooLit/Debian-Hyprland)
 
-- [Ubuntu 24.04 LTS](https://github.com/JaKooLit/Debian-Hyprland/tree/Ubuntu-24.04-LTS)
+- [Ubuntu 24.04 LTS](https://github.com/JaKooLit/Ubuntu-Hyprland/tree/24.04)
+
+- [NixOS](https://github.com/JaKooLit/NixOS-Hyprland)
+
+#### Hyprland Install scripts on alpha/beta stage
+
+- [Ubuntu 24.10)](https://github.com/JaKooLit/Ubuntu-Hyprland/tree/24.10)
 
 - refer to install scripts what packages needed to install... but atleast, Hyprland packages is needed 😏😏😏 duh!!
-- When using the install scripts above, it will pull the releases (stable) of this dotfiles
+- When using the install scripts above, it will pull the releases (stable) of this dotfiles, except for Nixos where it pulls from main
 
 
 ### 🪧 Attention 🪧
@@ -72,29 +79,27 @@ https://github.com/JaKooLit/Hyprland-Dots/assets/85185940/50d53755-0f11-45d6-991
 - All screenshots are collected here [Screenshots](https://github.com/JaKooLit/screenshots/tree/main/Hyprland-ScreenShots)
 
 ### 📦 Whats new?
-- To easily track changes, I will be updating the changelogs. [CHANGELOGS](https://github.com/JaKooLit/Hyprland-Dots/wiki/Changelogs)  Screenshots will be included if worth it!
+- To easily track changes, I will be updating the [CHANGELOGS](https://github.com/JaKooLit/Hyprland-Dots/wiki/Changelogs)  Screenshots will be included if worth it!
 
 ### 💥 Copying / Installation / Update instructions 💥
 - [`MORE INFO HERE`](https://github.com/JaKooLit/Hyprland-Dots/wiki/Install_&_Update) 
 > [!Note] 
-> The auto copy script will create backups of intended folders to be copied. However, still a good idea to manually backup just incase script failed to backup!
+> The auto copy script "copy.sh" will create backups of intended folders to be copied. However, still a good idea to manually backup just incase script failed to backup!
 - ~/.config (ags btop cava hypr kitty Kvantum qt5ct qt6ct rofi swappy swaync wallust waybar wlogout) - These are folders to be copied.
 - ~/Pictures/wallpapers - Will be backed up
 - clone this repo by using git. Change directory, make executable and run the script
 
-> to download from Master branch (possible bugs)
+> to download from Master branch
 ```bash
 git clone --depth=1 https://github.com/JaKooLit/Hyprland-Dots.git
 cd Hyprland-Dots
 ```
-
 
 > to download from Development branch (development and testing)
 ```bash
 git clone --depth=1 https://github.com/JaKooLit/Hyprland-Dots.git -b development
 cd Hyprland-Dots
 ```
-
 
 - automatic copy of pre-configured dots
 ```bash
@@ -108,29 +113,26 @@ chmod +x release.sh
 ./release.sh
 ```
 
-
-- UPGRADE.sh function (Experimental)
+- UPGRADE.sh function
 > [!IMPORTANT]
-> You should atleast v2.2.3 in your hyprland dots (ls ~/.config/hypr) to check version
 > You need rsync for it to work
-> you should have already up and running Hyprland before using this function
+> you should have already up and running KooL's Hyprland before using this function
 ```bash
 chmod +x upgrade.sh
 ./upgrade.sh
 ```
 
 ## ⚠️⚠️⚠️ ATTENTION - BACKUPS CREATED by SCRIPT
-> [!NOTE]
+> [!CAUTION]
 > copy.sh, release.sh and even upgrade.sh creates a backup!
 > Kindly investigate manually contents on your ~/.config
 > Delete manually all the backups which you dont need
 
 #### 🛎️ a small note on wallpapers
-- by default, only few wallpapers will be copied (1 each dark and light plus 3 more). You will be offered to download more wallpapers. You can preview/check the additional wallpapers on [`THIS`](https://github.com/JaKooLit/Wallpaper-Bank/tree/main/wallpapers) Link
+- by default, only few wallpapers will be copied (1 each dark and light plus 3 more). You will be offered to download more wallpapers. You can preview/check the additional wallpapers from [`THIS`](https://github.com/JaKooLit/Wallpaper-Bank/tree/main/wallpapers) Link
 
 
 #### ⚠️⚠️⚠️ A MUST! after copying  / Installing these dots
-+ By default I have not set a wallpaper. 
 + Press SUPER W and set a wallpaper. This is also to initiate wallust for waybar, kitty (tty) and rofi themes. However, If you use the copy.sh or the release.sh, there will be a preset initial Wallpaper and you dont have to do this
 
 + Nvidia Owners. Make sure to edit your `~/.config/hypr/UserConfigs/ENVariables.conf` (recommended). Below env's will be activated if automatic copy is used
@@ -148,6 +150,7 @@ chmod +x upgrade.sh
 - FAQ! Yes you can use these dotfiles to other distro! Just ensure to install proper packages first! If it makes you feel better, I use same config on my Gentoo and NixOS :)
 - QUICK HINT! Click the HINT! Waybar module (note only available in Waybar default and Simple-L [TOP] layout). Can be launched by Keybind SUPER H
 - More question? click here browse through this [WIKI](https://github.com/JaKooLit/Hyprland-Dots/wiki/)
+- If you want the old configs, it is collected on my "Archive" repo. See [HERE](https://github.com/JaKooLit/Hyprland-Dots-releases-Archive)
 
 #### ⌨ Keybinds
 - Keybinds [`CLICK`](https://github.com/JaKooLit/Hyprland-Dots/wiki/Keybinds)
@@ -179,5 +182,13 @@ chmod +x upgrade.sh
 
 
                         
-## 🥰🥰 💖💖 👍👍👍
-[![Stargazers over time](https://starchart.cc/JaKooLit/Hyprland-Dots.svg?variant=adaptive)](https://starchart.cc/JaKooLit/Hyprland-Dots)
+## 🫰	Thank you for the stars 🩷
+
+<a href="https://star-history.com/#JaKooLit/Hyprland-Dots&Date">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=JaKooLit/Hyprland-Dots&type=Date&theme=dark" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=JaKooLit/Hyprland-Dots&type=Date" />
+   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=JaKooLit/Hyprland-Dots&type=Date" />
+ </picture>
+</a>
+
